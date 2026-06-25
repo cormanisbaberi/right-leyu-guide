@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>资料索引 · leyu 信息聚合</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f6f7f9;
+      color: #1e1f23;
+      line-height: 1.6;
+    }
+
+    /* 深色头图 */
+    .hero {
+      background: #0d1117;
+      color: #e6edf3;
+      padding: 4rem 2rem 3rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid #2d333b;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+      color: #f0f6fc;
+    }
+
+    .hero .sub {
+      font-size: 1.2rem;
+      color: #8b949e;
+      max-width: 620px;
+      margin: 0 auto 1.2rem auto;
+      font-weight: 330;
+    }
+
+    .hero .tagline {
+      font-size: 0.95rem;
+      color: #6e7681;
+      border-top: 1px solid #30363d;
+      display: inline-block;
+      padding-top: 0.9rem;
+      margin-top: 0.4rem;
+    }
+
+    /* 浅色正文区 */
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 2.8rem 1.8rem 4rem 1.8rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 2.4rem 2.4rem 2.8rem 2.4rem;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.03), 0 2px 4px rgba(0,0,0,0.02);
+      margin-bottom: 2.2rem;
+    }
+
+    .card p {
+      margin-bottom: 1.2rem;
+      font-size: 1.02rem;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 强调色 */
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s, color 0.15s;
+      font-weight: 430;
+    }
+
+    a:hover {
+      color: #1d4ed8;
+      border-bottom-color: #1d4ed8;
+    }
+
+    .strong-accent {
+      color: #2563eb;
+    }
+
+    /* 特点列表 */
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.6rem 0 0.4rem 0;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .feature-list li:last-child {
+      border-bottom: none;
+    }
+
+    .feature-icon {
+      flex-shrink: 0;
+      width: 1.6rem;
+      height: 1.6rem;
+      background: #eef2ff;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: #2563eb;
+      margin-top: 0.1rem;
+    }
+
+    .feature-list strong {
+      font-weight: 540;
+    }
+
+    /* 场景网格 */
+    .scene-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin: 1.8rem 0 0.8rem 0;
+    }
+
+    .scene-item {
+      background: #f9fafb;
+      border-radius: 14px;
+      padding: 1.2rem 1.4rem;
+      border-left: 4px solid #2563eb;
+      font-size: 0.95rem;
+    }
+
+    .scene-item h4 {
+      font-size: 1rem;
+      font-weight: 540;
+      margin-bottom: 0.25rem;
+      color: #111;
+    }
+
+    .scene-item p {
+      color: #3b3d44;
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    /* 温和结尾 */
+    .ending {
+      background: #f1f5f9;
+      border-radius: 18px;
+      padding: 2rem 2.2rem;
+      margin-top: 1.6rem;
+      border: 1px solid #e2e8f0;
+    }
+
+    .ending p {
+      margin-bottom: 0.6rem;
+      font-size: 1rem;
+      color: #1e293b;
+    }
+
+    .ending p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 响应式 */
+    @media (max-width: 680px) {
+      .hero h1 { font-size: 2.1rem; }
+      .hero { padding: 3.2rem 1.2rem 2.2rem 1.2rem; }
+      .container { padding: 1.8rem 1rem 3rem 1rem; }
+      .card { padding: 1.6rem 1.4rem 2rem 1.4rem; }
+      .scene-grid { grid-template-columns: 1fr; }
+      .feature-list li { padding: 0.8rem 0; }
+    }
+
+    @media (max-width: 460px) {
+      .hero .sub { font-size: 1rem; }
+      .scene-item { padding: 1rem; }
+    }
+
+    /* 小细节 */
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #d0d5dd, transparent);
+      margin: 2.2rem 0 1.8rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 深色头图 -->
+  <header class="hero">
+    <h1>信息 · 索引 &nbsp;·&nbsp; leyu</h1>
+    <p class="sub">
+      从散落的数据片段到结构化的参考脉络——围绕 <a href="https://right-leyu.com.cn" style="color:#58a6ff; border-bottom-color: #58a6ff;">leyu</a> 的资料整理方式。
+    </p>
+    <span class="tagline">一份以整理与索引为起点的页面</span>
+  </header>
+
+  <!-- 正文区 -->
+  <main class="container">
+
+    <!-- 承接段落 —— 从资料整理切入 -->
+    <div class="card">
+      <p>
+        在信息流快速切换的语境下，对特定对象的系统性梳理往往比碎片浏览更有参考价值。以 <a href="https://right-leyu.com.cn">leyu</a> 为中心节点，本页尝试将零散的功能描述、使用场景以及常见关注点组织成可复用的索引结构。下文的内容均来自公开可查的材料与一般性使用反馈，不构成推荐或保证。
+      </p>
+
+      <p>
+        资料整理的基本思路是：先划定边界，再提取共性。以下列表概括了围绕 <strong class="strong-accent">leyu</strong> 被频繁提及的几个属性特征，它们来自不同时间点的产品介绍与社区讨论，经过归并与去重后呈现。
+      </p>
+
+      <!-- 特点列表 -->
+      <ul class="feature-list">
+        <li>
+          <span class="feature-icon">📋</span>
+          <div><strong>模块化信息结构</strong> —— 功能层级清晰，分类逻辑以用户任务为导向，减少无关干扰，查阅时可快速定位到对应模块。</div>
+        </li>
+        <li>
+          <span class="feature-icon">🔄</span>
+          <div><strong>多入口适应</strong> —— 支持从不同设备与浏览器环境进入，界面渲染一致性较高，无需额外配置即可获得相近的浏览体验。</div>
+        </li>
+        <li>
+          <span class="feature-icon">🔍</span>
+          <div><strong>检索路径直接</strong> —— 站内导航与搜索入口位置明确，信息层级扁平，适合有明确查找目标的访问者。</div>
+        </li>
+        <li>
+          <span class="feature-icon">📱</span>
+          <div><strong>响应式界面</strong> —— 在移动端与桌面端均保留核心功能入口，布局会依据视口宽度自动调整，无功能缺失。</div>
+        </li>
+      </ul>
+
+      <p style="margin-top: 0.9rem;">
+        以上特征均基于常规使用场景的归纳，具体情况可能因版本迭代或网络环境有所不同。建议访问 <a href="https://right-leyu.com.cn">leyu</a> 直接体验最新界面。
+      </p>
+    </div>
+
+    <!-- 场景卡片：整理索引的实际应用 -->
+    <div class="card" style="padding-bottom: 2.2rem;">
+      <p>
+        从索引角度看，资料的价值在于被需要时能被找到。下面是基于常见使用意图归纳出的三个典型场景——它们可以帮助理解 <strong class="strong-accent">leyu</strong> 在信息查找流程中的位置。
+      </p>
+
+      <div class="scene-grid">
+        <div class="scene-item">
+          <h4>🔖 功能速查</h4>
+          <p>当需要快速确认某个具体操作路径时，通过分类菜单或站内搜索直接定位，无需翻阅长篇文档。</p>
+        </div>
+        <div class="scene-item">
+          <h4>📚 横向对比</h4>
+          <p>整理不同入口或模块之间的关系时，leyu 的板块划分有助于建立清晰的信息对照表。</p>
+        </div>
+        <div class="scene-item">
+          <h4>🧩 信息归档</h4>
+          <p>将特定页面的截取内容与公开说明进行交叉索引，便于后期回溯或制作摘要。</p>
+        </div>
+        <div class="scene-item">
+          <h4>🧹 重复降噪</h4>
+          <p>通过结构化的导航减少无关内容干扰，让每次信息检索都围绕核心目标展开。</p>
+        </div>
+      </div>
+
+      <p style="margin-top: 1.2rem; font-size: 0.95rem; color: #555;">
+        ※ 以上场景基于一般性信息整理习惯推导，不涉及对具体功能的评价。
+      </p>
+    </div>
+
+    <!-- 温和结尾 + FAQ 摘要风格 -->
+    <div class="ending">
+      <p><strong>一些常见的疑问摘要</strong> —— 基于公开讨论整理，仅供参考：</p>
+      <p style="margin-top: 0.6rem;">
+        <span style="font-weight: 500;">Q：leyu 的信息更新频率如何？</span><br>
+        A：建议直接关注站点内的通知区域或公告板块，第三方整理的信息可能存在延迟。
+      </p>
+      <p style="margin-top: 0.5rem;">
+        <span style="font-weight: 500;">Q：是否有官方的资料集合页？</span><br>
+        A：可通过 <a href="https://right-leyu.com.cn">leyu</a> 的主导航进入相关栏目，通常会有集中的说明或帮助入口。
+      </p>
+      <p style="margin-top: 0.5rem;">
+        <span style="font-weight: 500;">Q：索引整理时需要注意什么？</span><br>
+        A：建议以原始页面为准，标注时间与来源，避免二次转述造成的信息偏差。
+      </p>
+      <p style="margin-top: 1rem; font-size: 0.9rem; color: #4b5563;">
+        本页内容仅为资料索引的示例，不代表官方立场。如需获取最准确的信息，请直接访问 <a href="https://right-leyu.com.cn">leyu</a>。
+      </p>
+    </div>
+
+  </main>
+
+</body>
+</html>
